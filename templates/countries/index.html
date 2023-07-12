@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for country in countries %}
+<div class="product_section_2 images">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="images"><img src="{{ country.flag.url }}" style="max-width: 100%; width: 100%;">
+            </div>
+            <h2 class="den_text croissants"><a href="{% url 'get-country' country.id %}">{{ country.name }}</a></h2>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
